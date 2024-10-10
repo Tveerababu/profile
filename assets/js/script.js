@@ -143,8 +143,32 @@ function showProjects(projects) {
 
     /* SCROLL PROJECTS */
     srtop.reveal('.work .box', { interval: 200 });
-
 }
+
+document.getElementById("DeploymentErr").addEventListener("click", function() {
+    document.getElementById("errorPopup").style.display = "block";
+});
+
+document.querySelector(".close").addEventListener("click", function() {
+    document.getElementById("errorPopup").style.display = "none";
+});
+
+document.getElementById("CodeErr").addEventListener("click", function() {
+    document.getElementById("errorPopup").style.display = "block";
+});
+
+document.querySelector(".close").addEventListener("click", function() {
+    document.getElementById("errorPopup").style.display = "none";
+});
+
+let currentImage = 1;
+    setInterval(() => {
+        document.getElementById('image1').classList.toggle('hidden');
+        document.getElementById('image2').classList.toggle('hidden');
+        currentImage = currentImage === 1 ? 2 : 1;
+}, 3000);
+
+
 
 fetchData().then(data => {
     showSkills(data);
@@ -155,9 +179,9 @@ fetchData("projects").then(data => {
 });
 
 // <!-- tilt js effect starts -->
-/*VanillaTilt.init(document.querySelectorAll(".tilt"), {
-    max: 15,
-});*/
+// /*VanillaTilt.init(document.querySelectorAll(".tilt"), {
+//     max: 15,
+// });*/
 // <!-- tilt js effect ends -->
 
 
@@ -191,15 +215,15 @@ document.onkeydown = function (e) {
 }
 
 // // Start of Tawk.to Live Chat
-var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-(function () {
-    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/60df10bf7f4b000ac03ab6a8/1f9jlirg6';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    s0.parentNode.insertBefore(s1, s0);
-})();
+// var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+// (function () {
+//     var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+//     s1.async = true;
+//     s1.src = 'https://embed.tawk.to/60df10bf7f4b000ac03ab6a8/1f9jlirg6';
+//     s1.charset = 'UTF-8';
+//     s1.setAttribute('crossorigin', '*');
+//     s0.parentNode.insertBefore(s1, s0);
+// })();
 // // End of Tawk.to Live Chat
 
 
